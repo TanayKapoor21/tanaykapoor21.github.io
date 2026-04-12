@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tanay Kapoor — AI & Data Science</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,7 +25,16 @@
     --radius: 20px;
     --font-head: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
     --transition: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-neo] {
+    font-family: var(--font-mono);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    text-shadow: 0 0 8px var(--accent2-glow);
   }
 
   html { scroll-behavior: smooth; }
@@ -134,13 +143,16 @@
     pointer-events: none;
   }
   .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--accent2);
-    border: 1px solid rgba(0,229,160,0.25);
-    background: rgba(0,229,160,0.06);
-    border-radius: 100px; padding: 6px 14px;
-    margin-bottom: 2rem; width: fit-content;
+    border: 1px solid rgba(0,255,163,0.3);
+    background: rgba(0,229,160,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 100px; padding: 8px 18px;
+    margin-bottom: 2.5rem; width: fit-content;
+    box-shadow: 0 0 20px rgba(0, 255, 163, 0.1);
   }
   .hero-tag::before {
     content: '';
@@ -167,6 +179,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px var(--accent-glow));
+    text-shadow: 0 0 30px var(--accent-glow);
   }
   .hero-sub {
     font-size: clamp(1rem, 2vw, 1.25rem);
@@ -226,9 +239,17 @@
   /* ---- SECTIONS ---- */
   section { padding: 6rem 6vw; }
   .section-label {
-    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent2);
     margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before {
+    content: '['; color: var(--accent);
+  }
+  .section-label::after {
+    content: ']'; color: var(--accent);
   }
   .section-title {
     font-family: var(--font-head);
@@ -533,7 +554,7 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label">Who I am</div>
+  <div class="section-label" data-neo>Who I am</div>
   <div class="about-grid">
     <div class="about-text fade-in">
       <h2 class="section-title">Engineer at heart,<br/>analyst by skill</h2>
@@ -572,7 +593,7 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">Technical skills</div>
+  <div class="section-label" data-neo>Technical skills</div>
   <h2 class="section-title">Tools of the trade</h2>
   <div class="skills-grid fade-in">
     <div class="skill-card">
@@ -638,7 +659,7 @@
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">Work history</div>
+  <div class="section-label" data-neo>Work history</div>
   <h2 class="section-title">Where I've worked</h2>
   <div class="timeline fade-in">
 
@@ -705,7 +726,7 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">Selected work</div>
+  <div class="section-label" data-neo>Selected work</div>
   <h2 class="section-title">Projects I'm proud of</h2>
   <div class="projects-grid fade-in">
 
@@ -788,7 +809,7 @@
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="section-label">Education</div>
+  <div class="section-label" data-neo>Education</div>
   <h2 class="section-title">Academic background</h2>
   <div class="edu-card fade-in">
     <div>
@@ -807,7 +828,7 @@
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="section-label">Credentials</div>
+  <div class="section-label" data-neo>Credentials</div>
   <h2 class="section-title">Certifications</h2>
   <div class="certs-grid fade-in">
     <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">AI Azure 900</div><div class="cert-issuer">Microsoft</div></div></div>
@@ -828,7 +849,7 @@
 
 <!-- LEADERSHIP -->
 <section id="leadership">
-  <div class="section-label">Leadership</div>
+  <div class="section-label" data-neo>Leadership</div>
   <h2 class="section-title">Campus involvement</h2>
   <div class="leadership-grid fade-in">
     <div class="lead-item">
@@ -1009,6 +1030,7 @@
     });
   }, { threshold: 0.1 });
 
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   document.querySelectorAll('.about-stats').forEach(el => observer.observe(el));
 
   // ---- PROGRESS BAR ----
