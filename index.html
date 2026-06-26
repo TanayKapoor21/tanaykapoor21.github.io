@@ -4,7 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanay Kapoor — AI & Data Science</title>
+  <title>Tanay Kapoor — Software Engineer | Backend & AI Engineer</title>
+  <meta name="description" content="Portfolio of Tanay Kapoor, a Software Engineer, Backend Developer, and AI & Data Engineer specializing in FastAPI, Python, cloud architectures, and machine learning." />
+  <meta name="keywords" content="Tanay Kapoor, Software Engineer, Backend Developer, AI Engineer, Data Engineer, FastAPI, Python, PostgreSQL, MongoDB, Machine Learning, Portfolio, NCU" />
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="Tanay Kapoor — Software Engineer | Backend & AI Engineer" />
+  <meta property="og:description" content="Portfolio of Tanay Kapoor, specializing in building AI-powered backend systems, scalable APIs, and intelligent data platforms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tanaykapoor21.github.io/" />
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
@@ -264,17 +271,22 @@
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      font-weight: 300;
-      color: var(--muted);
-      max-width: 560px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: var(--text);
+      max-width: 800px;
+      line-height: 1.4;
+      margin-bottom: 1rem;
     }
 
-    .hero-sub strong {
-      color: var(--text);
-      font-weight: 500;
+    .hero-sub-detail {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      min-height: 48px;
     }
 
     .hero-cta {
@@ -338,6 +350,43 @@
       width: 40px;
       height: 1px;
       background: var(--muted);
+    }
+
+    /* ---- TECH MARQUEE ---- */
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .marquee-content {
+      display: inline-flex;
+      gap: 3rem;
+      animation: marquee-scroll 35s linear infinite;
+    }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--text-sec);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .marquee-item span {
+      color: var(--accent2);
     }
 
     /* ---- PROGRESS BAR ---- */
@@ -487,6 +536,190 @@
 
     .pill-icon {
       font-size: 14px;
+    }
+
+    /* ---- FEATURED CARD ---- */
+    .featured-card {
+      background: linear-gradient(135deg, rgba(124, 77, 255, 0.05) 0%, rgba(0, 255, 163, 0.02) 100%);
+      border: 1px solid rgba(124, 77, 255, 0.2);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(124, 77, 255, 0.08);
+      transition: border-color 0.3s, transform 0.3s;
+      margin-top: 1rem;
+    }
+
+    .featured-card:hover {
+      border-color: var(--accent2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 255, 163, 0.1);
+    }
+
+    .featured-card::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 255, 163, 0.05) 0%, transparent 70%);
+      bottom: -150px;
+      right: -150px;
+      pointer-events: none;
+    }
+
+    .featured-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent2);
+      background: rgba(0, 255, 163, 0.1);
+      border: 1px solid rgba(0, 255, 163, 0.2);
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .featured-title {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .featured-company {
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .featured-date {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+
+    .featured-desc {
+      color: var(--text-sec);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .featured-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .featured-bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .bullet-glow {
+      color: var(--accent2);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      text-shadow: 0 0 8px var(--accent2-glow);
+    }
+
+    .featured-bullet div {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .featured-bullet div strong {
+      color: var(--text);
+    }
+
+    .featured-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    /* ---- CURRENTLY BUILDING ---- */
+    .building-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(0, 255, 163, 0.4);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .pulse-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 10px var(--accent2-glow);
+      animation: pulse-glow 1.5s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 10px var(--accent2-glow);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+        box-shadow: 0 0 4px var(--accent2-glow);
+      }
+    }
+
+    .building-title {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+
+    .building-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .building-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     /* ---- SKILLS ---- */
@@ -659,6 +892,55 @@
       transform: scaleX(1);
     }
 
+    /* ---- PROJECT PREVIEW IMAGE ---- */
+    .project-image {
+      height: 140px;
+      background: linear-gradient(135deg, rgba(124, 77, 255, 0.08) 0%, rgba(0, 255, 163, 0.04) 100%);
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .project-card:hover .project-image {
+      background: linear-gradient(135deg, rgba(124, 77, 255, 0.15) 0%, rgba(0, 255, 163, 0.08) 100%);
+    }
+
+    .project-image-dots {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .project-image-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .project-image-dot:nth-child(1) { background: #ff5f56; }
+    .project-image-dot:nth-child(2) { background: #ffbd2e; }
+    .project-image-dot:nth-child(3) { background: #27c93f; }
+
+    .project-image-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .project-card:hover .project-image-text {
+      color: var(--text-sec);
+    }
+
     .project-badge {
       display: inline-flex;
       align-items: center;
@@ -728,9 +1010,79 @@
       color: var(--accent2);
     }
 
+    /* ---- ACHIEVEMENTS ---- */
+    #achievements {
+      background: var(--bg2);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .achievement-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: all 0.3s var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .achievement-card:hover {
+      border-color: rgba(255, 215, 0, 0.35);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.06);
+    }
+
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .achievement-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    .achievement-title {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .achievement-org {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+    }
+
+    .achievement-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
     /* ---- CERTIFICATIONS ---- */
     #certifications {
-      background: var(--bg2);
+      background: var(--bg);
     }
 
     .certs-grid {
@@ -775,7 +1127,7 @@
 
     /* ---- EDUCATION ---- */
     #education {
-      background: var(--bg);
+      background: var(--bg2);
     }
 
     .edu-card {
@@ -824,7 +1176,7 @@
 
     /* ---- LEADERSHIP ---- */
     #leadership {
-      background: var(--bg2);
+      background: var(--bg);
     }
 
     .leadership-grid {
@@ -885,8 +1237,14 @@
 
     .contact-sub {
       color: var(--muted);
-      max-width: 450px;
+      max-width: 580px;
       margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .contact-sub strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
     .contact-links {
@@ -963,6 +1321,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -975,7 +1334,10 @@
     <h1 class="hero-name">
       Tanay<br /><span class="accent">Kapoor</span>
     </h1>
-    <p class="hero-sub" id="typewriter-text"></p>
+    <p class="hero-sub">
+      Software Engineer building AI-powered backend systems, scalable APIs, and intelligent data platforms.
+    </p>
+    <p class="hero-sub-detail" id="typewriter-text"></p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View My Work →</a>
       <a href="https://github.com/TanayKapoor21" target="_blank" class="btn btn-outline">GitHub</a>
@@ -984,6 +1346,39 @@
     <div class="hero-scroll">Scroll to explore</div>
   </section>
 
+  <!-- TECH MARQUEE -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <div class="marquee-item"><span>⚡</span> Python</div>
+      <div class="marquee-item"><span>⚡</span> SQL</div>
+      <div class="marquee-item"><span>⚡</span> Java</div>
+      <div class="marquee-item"><span>⚡</span> FastAPI</div>
+      <div class="marquee-item"><span>⚡</span> PostgreSQL</div>
+      <div class="marquee-item"><span>⚡</span> MongoDB</div>
+      <div class="marquee-item"><span>⚡</span> AWS</div>
+      <div class="marquee-item"><span>⚡</span> Azure</div>
+      <div class="marquee-item"><span>⚡</span> Apache Spark</div>
+      <div class="marquee-item"><span>⚡</span> Machine Learning</div>
+      <div class="marquee-item"><span>⚡</span> Scrapy</div>
+      <div class="marquee-item"><span>⚡</span> REST APIs</div>
+      <div class="marquee-item"><span>⚡</span> ETL Pipelines</div>
+      <!-- Duplicate for seamless looping -->
+      <div class="marquee-item"><span>⚡</span> Python</div>
+      <div class="marquee-item"><span>⚡</span> SQL</div>
+      <div class="marquee-item"><span>⚡</span> Java</div>
+      <div class="marquee-item"><span>⚡</span> FastAPI</div>
+      <div class="marquee-item"><span>⚡</span> PostgreSQL</div>
+      <div class="marquee-item"><span>⚡</span> MongoDB</div>
+      <div class="marquee-item"><span>⚡</span> AWS</div>
+      <div class="marquee-item"><span>⚡</span> Azure</div>
+      <div class="marquee-item"><span>⚡</span> Apache Spark</div>
+      <div class="marquee-item"><span>⚡</span> Machine Learning</div>
+      <div class="marquee-item"><span>⚡</span> Scrapy</div>
+      <div class="marquee-item"><span>⚡</span> REST APIs</div>
+      <div class="marquee-item"><span>⚡</span> ETL Pipelines</div>
+    </div>
+  </div>
+
   <div class="divider"></div>
 
   <!-- ABOUT -->
@@ -991,57 +1386,136 @@
     <div class="section-label" data-neo>Who I am</div>
     <div class="about-grid">
       <div class="about-text fade-in">
-        <h2 class="section-title">Building Scalable<br />Systems & AI</h2>
-        <p>I’m Tanay Kapoor, a <strong>Software Engineering and Data Science enthusiast</strong>. I enjoy building efficient systems, working with data, and developing applications that solve real-world problems.</p>
+        <h2 class="section-title">Engineering Scalable<br />Backend Systems & AI</h2>
+        <p>I am Tanay Kapoor, a final-year B.Tech CSE (Data Science) student specializing in <strong>Software Development, Backend APIs, and Data Engineering</strong>. I enjoy solving real-world problems, building scalable systems, and working across the intersection of backend engineering, AI, and data pipelines.</p>
         
-        <p style="margin-top: 1rem;">My experience spans backend engineering, data analysis, and AI applications using <strong>Python, SQL, FastAPI, Spark, and AWS/Azure</strong>.</p>
+        <p style="margin-top: 1rem;">My experience focuses on designing robust <strong>REST APIs with FastAPI</strong>, managing databases like <strong>PostgreSQL and MongoDB</strong>, deploying services to <strong>AWS and Azure</strong>, and orchestrating <strong>ETL Pipelines</strong>. I build intelligent <strong>AI Applications</strong> and automation workflows that streamline complex operations.</p>
 
         <div style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
           <div>
-            <h3 style="font-size: 0.8rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-family: var(--font-mono);">Key Contributions</h3>
+            <h3 style="font-size: 0.8rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-family: var(--font-mono);">Core Expertise</h3>
             <ul style="list-style: none; font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              <li>• Backend & Scalable Web Features</li>
-              <li>• AI-powered Automation Solutions</li>
-              <li>• Data Analysis & Visualization</li>
-              <li>• Database Performance Tuning</li>
-              <li>• Large-scale Data Analytics</li>
+              <li>• FastAPI & REST APIs</li>
+              <li>• PostgreSQL & MongoDB</li>
+              <li>• Cloud Infrastructure (AWS, Azure)</li>
+              <li>• ETL Pipelines & Automation</li>
+              <li>• Machine Learning & AI Apps</li>
             </ul>
           </div>
           <div>
-            <h3 style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-family: var(--font-mono);">Project Highlights</h3>
+            <h3 style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-family: var(--font-mono);">Engineering Values</h3>
             <ul style="list-style: none; font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
-              <li>→ AI Waste Management Assistant</li>
-              <li>→ Automated Compliance Pipelines</li>
-              <li>→ Spark & Hive Data Processing</li>
-              <li>→ Backend Systems for Web Platforms</li>
+              <li>→ Scalable Distributed Systems</li>
+              <li>→ Real-World Problem Solving</li>
+              <li>→ High Performance API Design</li>
+              <li>→ Secure & Clean Architecture</li>
             </ul>
           </div>
         </div>
 
-        <p style="margin-top: 1.5rem;">Currently seeking opportunities in <strong>Software Engineering and Data Science</strong> where I can build impactful products and grow as an engineer.</p>
+        <p style="margin-top: 1.5rem;">Actively looking for full-time opportunities in <strong>Software Engineering, Backend, AI, and Data Engineering</strong> starting in 2026.</p>
 
         <div class="contact-pills" style="margin-top: 2rem;">
           <a href="mailto:tanaykapoor21@gmail.com" class="pill"><span class="pill-icon">✉</span> tanaykapoor21@gmail.com</a>
           <a href="https://linkedin.com/in/tanay-kapoor-21t" target="_blank" class="pill"><span class="pill-icon">in</span> LinkedIn</a>
           <a href="https://github.com/TanayKapoor21" target="_blank" class="pill"><span class="pill-icon">⌥</span> GitHub</a>
+          <a href="https://leetcode.com/TanayKapoor21" target="_blank" class="pill"><span class="pill-icon">💻</span> LeetCode</a>
+          <a href="https://www.hackerrank.com/profile/TanayKapoor21" target="_blank" class="pill"><span class="pill-icon">🏆</span> HackerRank</a>
         </div>
       </div>
       <div class="about-stats fade-in">
         <div class="stat-card">
-          <div class="stat-num">8.4</div>
+          <div class="stat-num">8.5</div>
           <div class="stat-label">Current CGPA</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">4+</div>
-          <div class="stat-label">Internships</div>
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Industry Internships</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">3×</div>
-          <div class="stat-label">Hackathon Winner</div>
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Hackathon Awards</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">49</div>
+          <div class="stat-num">50+</div>
           <div class="stat-label">GitHub Repos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FEATURED SPOTLIGHT -->
+  <section id="featured-spotlight" style="background: var(--bg); padding-top: 4rem; padding-bottom: 4rem;">
+    <div class="section-label" data-neo>Featured Spotlight</div>
+    <h2 class="section-title">Key Experience Highlight</h2>
+    <div class="featured-card fade-in">
+      <div class="featured-card-header">
+        <div>
+          <span class="featured-badge">🔥 Backend Intern</span>
+          <h3 class="featured-title">Software Developer Intern</h3>
+          <p class="featured-company">RZOLUT — Litigation Intelligence Platform</p>
+        </div>
+        <div class="featured-date">Jun 2024 – Nov 2025</div>
+      </div>
+      <p class="featured-desc">
+        Spearheaded backend API architecture design, third-party legal source scraping, and intelligent document extraction pipelines for a high-performance legal analytics product.
+      </p>
+      <div class="featured-bullets">
+        <div class="featured-bullet">
+          <span class="bullet-glow">⚡</span>
+          <div>
+            <strong>FastAPI REST APIs & Database Schemas:</strong> Engineered modular endpoints and performed structural query optimization for PostgreSQL and MongoDB databases, supporting high-throughput search demands.
+          </div>
+        </div>
+        <div class="featured-bullet">
+          <span class="bullet-glow">⚡</span>
+          <div>
+            <strong>AI & Legal System Integrations:</strong> Implemented AI-assisted document classification pipelines and built integrations with legal APIs including eCourt, Indian Kanoon, and vLex.
+          </div>
+        </div>
+        <div class="featured-bullet">
+          <span class="bullet-glow">⚡</span>
+          <div>
+            <strong>Background Ingestion Pipelines:</strong> Designed background jobs and asynchronous workers for continuous regulatory data collection, scrapers validation, and database updates.
+          </div>
+        </div>
+      </div>
+      <div class="featured-tech">
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">Python</span>
+        <span class="tag">Scrapy</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Git / Agile</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CURRENTLY BUILDING -->
+  <section id="currently-building" style="background: var(--bg2); padding-top: 4rem; padding-bottom: 4rem;">
+    <div class="section-label" data-neo>Active Dev</div>
+    <h2 class="section-title">Currently Building</h2>
+    <div class="building-grid fade-in">
+      <div class="building-card">
+        <div class="pulse-indicator">
+          <span class="pulse-dot"></span>
+          <span>In Active Development</span>
+        </div>
+        <h3 class="building-title">Litigation Intelligence Platform & AI Legal Systems</h3>
+        <p class="building-desc">
+          Building high-performance APIs and document intelligence engines utilizing FastAPI, large language models (LLMs), and vector databases. Integrating national and global court databases for real-time litigation search, automated compliance, and background screening.
+        </p>
+        <div class="building-tech">
+          <span class="tag">FastAPI</span>
+          <span class="tag">Vector Search</span>
+          <span class="tag">LLMs / NLP</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Distributed Ingestion</span>
         </div>
       </div>
     </div>
@@ -1066,23 +1540,25 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">ML & AI</div>
+        <div class="skill-cat">Backend & API</div>
         <div class="skill-tags">
-          <span class="tag">Artificial Intelligence</span>
-          <span class="tag">Data Science</span>
-          <span class="tag">Scikit-Learn</span>
-          <span class="tag">TensorFlow</span>
-          <span class="tag">Keras</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">NumPy</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Backend Development</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">Software Engineering</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Software Engineering</div>
+        <div class="skill-cat">AI & ML</div>
         <div class="skill-tags">
-          <span class="tag">Backend Development</span>
-          <span class="tag">Software Engineering</span>
-          <span class="tag">FastAPI</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Data Science</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Keras</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
         </div>
       </div>
       <div class="skill-card">
@@ -1091,33 +1567,36 @@
           <span class="tag">Apache Spark</span>
           <span class="tag">Hive</span>
           <span class="tag">Apache Pig</span>
+          <span class="tag">ETL</span>
           <span class="tag">Scrapy</span>
           <span class="tag">Streamlit</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Databases</div>
+        <div class="skill-cat">Cloud & Tools</div>
         <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">MongoDB</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Azure</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Jupyter Notebook</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Visualization & BI</div>
+        <div class="skill-cat">Databases</div>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Visualization</div>
         <div class="skill-tags">
           <span class="tag">Power BI</span>
           <span class="tag">Tableau</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Cloud & DevOps</div>
-        <div class="skill-tags">
-          <span class="tag">Azure</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Git</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">Linux</span>
+          <span class="tag">Excel</span>
         </div>
       </div>
     </div>
@@ -1139,29 +1618,25 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Contributed to backend feature development and enhancement of web-based applications in a collaborative
-              engineering environment.</li>
-            <li>Worked on debugging, optimization, and implementation of application modules to improve functionality
-              and user experience.</li>
-            <li>Collaborated with developers and product teams to support scalable software solutions and maintain
-              efficient development workflows.</li>
+            <li>Developed and optimized scalable backend modules for web-based enterprise applications using FastAPI and Python.</li>
+            <li>Collaborated on debugging, performance tuning, and database optimization, improving response times.</li>
+            <li>Worked with cross-functional product teams to design and implement modular backend components.</li>
           </ul>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-header">
-          <div class="timeline-role">Data Science Intern</div>
+          <div class="timeline-role">Software Developer Intern</div>
           <div class="timeline-org">RZOLUT</div>
           <div class="timeline-date">Jun 2024 – Nov 2025</div>
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Leveraging AI to identify financial crimes and providing background checks for individuals or entities.
-            </li>
-            <li>Utilized Scrapy for web scraping and data extraction; managed PostgreSQL databases and integrated 100+
-              US sources for regulatory compliance.</li>
-            <li>Developed a data visualization web application using Streamlit for internal analytics.</li>
+            <li>Engineered scalable REST APIs using <strong>FastAPI</strong> and designed robust database schemas in <strong>PostgreSQL</strong> and <strong>MongoDB</strong> for a Litigation Intelligence Platform.</li>
+            <li>Integrated legal databases including <strong>eCourt</strong>, <strong>Indian Kanoon</strong>, and <strong>vLex</strong> APIs to automate regulatory check processes.</li>
+            <li>Designed and executed <strong>AI-assisted document processing</strong> pipelines and background jobs to process large-scale court documents.</li>
+            <li>Collaborated in cross-functional agile teams (Git/Agile) on frontend-backend integrations, schema optimizations, and production troubleshooting.</li>
           </ul>
         </div>
       </div>
@@ -1174,10 +1649,9 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Supported AI product development by assisting in data preprocessing, model experimentation, and
-              automation workflows.</li>
-            <li>Contributed to internal tools and dashboards while maintaining strict data privacy and security
-              protocols.</li>
+            <li>Accelerated AI model workflows by designing data preprocessing scripts and feature engineering pipelines.</li>
+            <li>Assisted in hyperparameter tuning and model evaluations, enhancing performance metrics for core neural networks.</li>
+            <li>Maintained security and confidentiality of proprietary datasets following enterprise data compliance policies.</li>
           </ul>
         </div>
       </div>
@@ -1190,9 +1664,9 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Worked on real-world datasets using Python, SQL, Pandas, Scikit-learn, and Tableau.</li>
-            <li>Applied end-to-end data science workflows from cleaning to machine learning and visualization.</li>
-            <li>Completed capstone projects with professional mentorship.</li>
+            <li>Applied end-to-end data science workflows on real-world datasets using Pandas, NumPy, Scikit-learn, and Tableau.</li>
+            <li>Conducted exploratory data analysis (EDA) to discover business-critical patterns and designed predictive ML models.</li>
+            <li>Developed interactive reports and data visualizations to present actionable recommendations.</li>
           </ul>
         </div>
       </div>
@@ -1205,7 +1679,7 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Managed space system projects and coordinated within a community focused on space technology.</li>
+            <li>Coordinated data-driven workflows and managed system project modules within an international space technology community.</li>
           </ul>
         </div>
       </div>
@@ -1218,10 +1692,8 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Completed a simulation advising a hypothetical social media client on content trends as a Data Analyst.
-            </li>
-            <li>Cleaned, modeled, and analyzed 7 datasets to inform strategic decisions.</li>
-            <li>Prepared a PowerPoint deck and video presentation to communicate key insights to stakeholders.</li>
+            <li>Simulated advisory consultations for social media clients, cleaning and analyzing 7 datasets to detect market trends.</li>
+            <li>Presented data-driven strategic insights using visualization decks and video presentations.</li>
           </ul>
         </div>
       </div>
@@ -1234,10 +1706,8 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Utilized Python (Pandas, NumPy, Matplotlib, Seaborn) for data cleaning, analysis, and visualization.
-            </li>
-            <li>Collaborated to offer data-driven insights and actionable recommendations for business results.</li>
-            <li>Developed machine learning models and performed hyperparameter tuning for improved accuracy.</li>
+            <li>Conducted data cleaning, exploratory analysis, and predictive modeling using Pandas, NumPy, and Scikit-learn.</li>
+            <li>Optimized model performance through hyperparameter tuning and validation pipelines.</li>
           </ul>
         </div>
       </div>
@@ -1250,9 +1720,8 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Conducted EDA and preprocessing on real-world datasets using Python.</li>
-            <li>Created predictive analytics models and enhanced accuracy through hyperparameter tuning.</li>
-            <li>Delivered data-driven insights and practical recommendations to enhance business results.</li>
+            <li>Processed high-dimensional datasets, performing EDA and building predictive analytics models.</li>
+            <li>Delivered actionable insights and practical recommendations to enhance business decision-making.</li>
           </ul>
         </div>
       </div>
@@ -1265,7 +1734,7 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Leveraged Advanced Excel and analytical skills for large-scale data management.</li>
+            <li>Managed large-scale data logs and spreadsheet architectures using Advanced Excel and validation tools.</li>
           </ul>
         </div>
       </div>
@@ -1278,8 +1747,7 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Provided expertise in communication and mathematics to support educational content and student learning.
-            </li>
+            <li>Provided expertise in technical communication and mathematics to support educational content creation.</li>
           </ul>
         </div>
       </div>
@@ -1292,8 +1760,7 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Led event planning and student society coordination as a part-time ambassador.</li>
-            <li>Utilized strong communication and analytical skills to manage data logistics for campus events.</li>
+            <li>Coordinated student society logistics and campus events, managing promotional outreach campaigns.</li>
           </ul>
         </div>
       </div>
@@ -1306,9 +1773,8 @@
         </div>
         <div class="timeline-desc">
           <ul>
-            <li>Gained valuable experience working on industry-based projects, including a handwriting detector and a
-              spam news detector.</li>
-            <li>Mastered data science tools like Pandas and Python for intelligent system development.</li>
+            <li>Built neural networks for industry-focused projects, including a handwriting recognition tool and a spam classifier.</li>
+            <li>Utilized Python and Pandas to clean training datasets and evaluate classifier performance metrics.</li>
           </ul>
         </div>
       </div>
@@ -1325,12 +1791,19 @@
     <div class="projects-grid fade-in">
 
       <div class="project-card">
-        <div class="project-badge badge-win">🏆 Top 5 Finalist — SIH 2024 (Internal Round)</div>
-        <div class="project-title">Smart India Hackathon 2024</div>
-        <p class="project-desc">Recognized among the Top 5 teams nationally for developing innovative technological
-          solutions to real-world challenges posed by ministries and organizations.</p>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">SIH // Ministry Solution</span>
+        </div>
+        <div class="project-badge badge-featured">AI & Problem Solving</div>
+        <div class="project-title">Smart India Hackathon Prototype</div>
+        <p class="project-desc">Designed a technological solution for government ministries addressing real-world operational challenges. Integrated AI/ML components and optimized database schemas to solve scale issues.</p>
         <div class="project-stack">
-          <span class="tag">Problem Solving</span><span class="tag">AI/ML</span><span class="tag">Innovation</span>
+          <span class="tag">Python</span><span class="tag">AI/ML</span><span class="tag">Problem Solving</span>
         </div>
         <div class="project-links">
           <a href="https://linkedin.com/in/tanay-kapoor-21t" target="_blank" class="project-link">View Details →</a>
@@ -1338,13 +1811,19 @@
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-win">🏆 3rd Place — Hackverse 2025</div>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">EWWW // Waste Classifier</span>
+        </div>
+        <div class="project-badge badge-featured">AI & Computer Vision</div>
         <div class="project-title">AI Waste Management App (EWWW)</div>
-        <p class="project-desc">An AI-based waste disposal assistant featuring photo classification via Vision API +
-          GPT-4, a chatbot, recycling center locator, EcoPoints system, and carbon footprint tracking.</p>
+        <p class="project-desc">An AI-powered waste classification and routing platform. Integrates computer vision APIs for real-time waste sorting, a GPT-based chatbot assistant, mapping APIs for local recycling centers, and a gamified carbon footprint tracker.</p>
         <div class="project-stack">
-          <span class="tag">Python</span><span class="tag">MongoDB</span><span class="tag">GPT-4</span><span
-            class="tag">Maps API</span>
+          <span class="tag">Python</span><span class="tag">Vision API</span><span class="tag">MongoDB</span><span class="tag">GPT-4</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/TanayKapoor21/eco-way-to-waste-free-world" target="_blank"
@@ -1353,14 +1832,19 @@
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-win">🏆 3rd Prize — Engage 5.0 Hackathon</div>
-        <div class="project-title">AGRISAGE — Smart Agricultural Intelligence Platform</div>
-        <p class="project-desc">A data-driven agricultural platform for crop recommendation, soil health analysis, and
-          yield prediction using ML and EDA. Won **3rd Prize at Engage 5.0 Hackathon** and **Consolation Prize at IILM
-          University Ideathon 2025**.</p>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">AGRISAGE // Smart Ag Tech</span>
+        </div>
+        <div class="project-badge badge-featured">AI & Analytics Platform</div>
+        <div class="project-title">AGRISAGE — Smart Agriculture Platform</div>
+        <p class="project-desc">An AI-powered smart agriculture platform for crop recommendation, soil health monitoring, and yield prediction. Features machine learning models for predictive farming, weather insights, and agricultural data analytics.</p>
         <div class="project-stack">
-          <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">SQL</span><span
-            class="tag">React</span>
+          <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Data Analytics</span><span class="tag">SQL</span><span class="tag">React</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/TanayKapoor21/AGRISAGE" target="_blank" class="project-link">GitHub →</a>
@@ -1368,28 +1852,39 @@
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-featured">Featured</div>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">FITBLAST // Fitness Tracker</span>
+        </div>
+        <div class="project-badge badge-featured">Full-Stack Application</div>
         <div class="project-title">FitBlast — Fitness Tracking Web App</div>
-        <p class="project-desc">Full-stack fitness application for personalized workout tracking. Implemented JWT-based
-          user authentication and a structured MySQL schema for efficient queries.</p>
+        <p class="project-desc">Full-stack fitness application for personalized workout tracking. Implemented JWT-based user authentication and a structured MySQL schema for efficient queries.</p>
         <div class="project-stack">
-          <span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">Node.js</span><span
-            class="tag">HTML/CSS</span>
+          <span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">Node.js</span><span class="tag">HTML/CSS</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/TanayKapoor21/FITBLAST-FITLIFE-APP" target="_blank" class="project-link">GitHub
-            →</a>
+          <a href="https://github.com/TanayKapoor21/FITBLAST-FITLIFE-APP" target="_blank" class="project-link">GitHub →</a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-featured">Featured</div>
-        <div class="project-title">YouTube 2023 Global Data Analysis</div>
-        <p class="project-desc">Processed large-scale YouTube data using Pig and Hive; built Spark MLlib models for
-          revenue and growth prediction with ~85% accuracy. Analyzed category and region trends.</p>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">BIG DATA // Global Trends</span>
+        </div>
+        <div class="project-badge badge-featured">Data Engineering</div>
+        <div class="project-title">YouTube Global Data Analysis</div>
+        <p class="project-desc">Processed large-scale YouTube data using Pig and Hive; built Spark MLlib models for revenue and growth prediction with ~85% accuracy. Analyzed category and region trends.</p>
         <div class="project-stack">
-          <span class="tag">Apache Pig</span><span class="tag">Hive</span><span class="tag">Spark</span><span
-            class="tag">Cloudera</span>
+          <span class="tag">Apache Pig</span><span class="tag">Hive</span><span class="tag">Spark</span><span class="tag">Cloudera</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/TanayKapoor21" target="_blank" class="project-link">GitHub →</a>
@@ -1397,10 +1892,17 @@
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-featured">Featured</div>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">OPENCV // Hand Tracking</span>
+        </div>
+        <div class="project-badge badge-featured">Computer Vision</div>
         <div class="project-title">FingerCanvas</div>
-        <p class="project-desc">Real-time hand-tracking drawing application that lets users draw on a digital canvas
-          using hand gestures via computer vision.</p>
+        <p class="project-desc">Real-time hand-tracking drawing application that lets users draw on a digital canvas using hand gestures via computer vision.</p>
         <div class="project-stack">
           <span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">MediaPipe</span>
         </div>
@@ -1410,10 +1912,17 @@
       </div>
 
       <div class="project-card">
-        <div class="project-badge badge-featured">Featured</div>
+        <div class="project-image">
+          <div class="project-image-dots">
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+            <div class="project-image-dot"></div>
+          </div>
+          <span class="project-image-text">LLM // AI Assistant</span>
+        </div>
+        <div class="project-badge badge-featured">Generative AI</div>
         <div class="project-title">AI Resume Checker Chatbot</div>
-        <p class="project-desc">An AI-powered chatbot for analyzing and improving resumes, providing structured feedback
-          and recommendations.</p>
+        <p class="project-desc">An AI-powered chatbot for analyzing and improving resumes, providing structured feedback and recommendations.</p>
         <div class="project-stack">
           <span class="tag">Python</span><span class="tag">AI/LLM</span>
         </div>
@@ -1428,18 +1937,71 @@
 
   <div class="divider"></div>
 
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="section-label" data-neo>Recognition</div>
+    <h2 class="section-title">Achievements & Awards</h2>
+    <div class="achievements-grid fade-in">
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">CII R4 Award</h3>
+        <div class="achievement-org">Confederation of Indian Industry</div>
+        <p class="achievement-desc">Awarded for innovation and technical excellence in smart agricultural technology developments.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">Engage 5.0 Hackathon</h3>
+        <div class="achievement-org">Engage 5.0</div>
+        <p class="achievement-desc">Won 3rd Prize for developing AgriSage, a multilingual AI agricultural decision engine.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">Hackverse 2025</h3>
+        <div class="achievement-org">Hackverse</div>
+        <p class="achievement-desc">Secured 3rd Place for building EWWW, an AI-powered waste management and recycling locator system.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">Smart India Hackathon</h3>
+        <div class="achievement-org">Ministry of Education, India</div>
+        <p class="achievement-desc">Selected as a Top 5 Finalist in the internal round for solving national-level departmental problems.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">IILM Ideathon</h3>
+        <div class="achievement-org">IILM University</div>
+        <p class="achievement-desc">Received a Consolation Prize and recognition for the commercial viability and social impact of AgriSage.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3 class="achievement-title">Gold Badges</h3>
+        <div class="achievement-org">HackerRank</div>
+        <p class="achievement-desc">Achieved Gold Badges in Python programming and SQL database query language proficiency.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-label" data-neo>Education</div>
     <h2 class="section-title">Academic background</h2>
     <div class="edu-card fade-in">
       <div>
-        <div class="edu-degree">B.Tech in Computer Science Engineering</div>
+        <div class="edu-degree">B.Tech in Computer Science Engineering (Data Science)</div>
         <div class="edu-school">The NorthCap University, Gurugram</div>
         <div class="edu-detail">2022 – 2026 (Expected)</div>
       </div>
       <div>
-        <div class="edu-cgpa">8.4</div>
+        <div class="edu-cgpa">8.5</div>
         <div class="edu-cgpa-label">CGPA</div>
       </div>
     </div>
@@ -1570,25 +2132,22 @@
       <div class="lead-item">
         <div class="lead-role">President</div>
         <div class="lead-org">Puzzle Club — The NorthCap University</div>
-        <div class="lead-desc">Managed and organized 20+ fun, creative, and mind-challenging events for the student
-          community.</div>
+        <div class="lead-desc">Managed club operations and budget; coordinated 20+ logic and programming tournaments for 500+ student participants.</div>
       </div>
       <div class="lead-item">
         <div class="lead-role">Data Compilation Core</div>
         <div class="lead-org">Momentum 2024 — NCU Annual Fest</div>
-        <div class="lead-desc">Led event planning and coordination across 20+ student societies; managed data logistics
-          for 30+ events.</div>
+        <div class="lead-desc">Led the central database coordination and event logistics tracking across 20+ student societies and 30+ major events.</div>
       </div>
       <div class="lead-item">
         <div class="lead-role">Inaugural Core</div>
         <div class="lead-org">Momentum 2025 — NCU Annual Fest</div>
-        <div class="lead-desc">Managed the inaugural ceremony, coordinating cultural club performances for university
-          dignitaries and students.</div>
+        <div class="lead-desc">Coordinated high-profile protocol, inaugurals, and cultural schedules, welcoming VIP dignitaries and 2,000+ attendees.</div>
       </div>
       <div class="lead-item">
         <div class="lead-role">Core Team Member</div>
         <div class="lead-org">Students Activities & Leadership (SAL) Cell</div>
-        <div class="lead-desc">Managed event data logistics and insights for 30+ events across departments.</div>
+        <div class="lead-desc">Analyzed departmental student event data metrics and logistics pipelines, preparing performance feedback for leadership.</div>
       </div>
     </div>
   </section>
@@ -1598,8 +2157,7 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2 class="contact-title">Let's build<br /><span>something</span></h2>
-    <p class="contact-sub">Open to internships, collaborations, and full-time roles in AI, Data Science, and Data
-      Engineering.</p>
+    <p class="contact-sub">Open to <strong>Software Engineering</strong>, <strong>Backend Engineering</strong>, <strong>AI Engineering</strong>, <strong>Machine Learning</strong>, and <strong>Data Engineering</strong> full-time opportunities.</p>
     <div class="contact-links">
       <a href="mailto:tanaykapoor21@gmail.com" class="btn btn-primary">Send an Email →</a>
       <a href="https://linkedin.com/in/tanay-kapoor-21t" target="_blank" class="btn btn-outline">LinkedIn</a>
@@ -1638,7 +2196,7 @@
     animateCursor();
 
     // Hover states
-    const interactives = document.querySelectorAll('a, button, .btn, .pill, .skill-card, .project-card, .stat-card');
+    const interactives = document.querySelectorAll('a, button, .btn, .pill, .skill-card, .project-card, .stat-card, .featured-card, .achievement-card');
     interactives.forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(1.5)`;
@@ -1718,7 +2276,11 @@
     function animateStats() {
       const stats = document.querySelectorAll('.stat-num');
       stats.forEach(stat => {
-        const target = parseFloat(stat.innerText);
+        const originalText = stat.innerText;
+        const numberMatch = originalText.match(/[\d.]+/);
+        if (!numberMatch) return;
+        const target = parseFloat(numberMatch[0]);
+        const suffix = originalText.replace(numberMatch[0], '');
         let count = 0;
         const duration = 2000;
         const step = target / (duration / 16);
@@ -1726,10 +2288,10 @@
         const update = () => {
           count += step;
           if (count < target) {
-            stat.innerText = count.toFixed(stat.innerText.includes('.') ? 1 : 0);
+            stat.innerText = count.toFixed(originalText.includes('.') ? 1 : 0) + suffix;
             requestAnimationFrame(update);
           } else {
-            stat.innerText = target;
+            stat.innerText = originalText;
           }
         };
         update();
@@ -1761,7 +2323,7 @@
     });
 
     // ---- TYPEWRITER EFFECT ----
-    const text = "AI & Data Science enthusiast — turning raw data into insights through machine learning, predictive modeling, and intelligent systems. Currently pursuing B.Tech at NCU.";
+    const text = "> Final Year B.Tech CSE (Data Science) | Open to Software Engineering, Backend, AI and Data Engineering roles. Specializing in Python, FastAPI, and Cloud Platforms.";
     const speed = 30;
     let i = 0;
     function typeWriter() {
